@@ -21,9 +21,16 @@ public class UserRepositoryTest {
 
 	@Test
 	public void test_findAll() {
-		User test = User.builder().userId("000001").firstName("taro").secondName("suzuki").build();
-		userRepository.save(test);
-		assertThat(userRepository.count(), is(equalTo(1L)));
+		assertThat(userRepository.count(), is(equalTo(3L)));
+		userRepository.findAll().stream().forEach(System.out::println);
+	}
+
+	@Test
+	public void test_findById() {
+
+		User actual = userRepository.findOne("00001");
+		assertThat(actual.getFirstName(), is(equalTo("suzuki")));
+		assertThat(actual.getSecondName(), is(equalTo("taro")));
 	}
 
 }

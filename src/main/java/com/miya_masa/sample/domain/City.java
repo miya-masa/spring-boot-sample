@@ -3,8 +3,8 @@ package com.miya_masa.sample.domain;
 import java.io.Serializable;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.OneToOne;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -16,16 +16,13 @@ import lombok.NoArgsConstructor;
 @Entity
 @AllArgsConstructor
 @NoArgsConstructor
-public class User implements Serializable {
+public class City implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	private String userId;
-	private String secondName;
-	private String firstName;
-
-	@OneToOne
-	private City city;
+	@GeneratedValue
+	private Long id;
+	private String name;
 
 }
