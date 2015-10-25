@@ -20,6 +20,8 @@ buildscript {
 
 // Apply the java plugin to add support for Java
 apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'jacoco'
 apply plugin: 'spring-boot'
 
 // In this section you declare where to find the dependencies of your project
