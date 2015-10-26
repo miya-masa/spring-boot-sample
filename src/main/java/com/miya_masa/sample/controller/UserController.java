@@ -13,7 +13,7 @@ import com.miya_masa.sample.service.UserService;
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
-@RestController()
+@RestController
 @RequestMapping("user")
 public class UserController {
 
