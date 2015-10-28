@@ -56,7 +56,7 @@ gulp.task('images', function () {
       progressive: true,
       interlaced: true
     })))
-    .pipe(gulp.dest('static/dist/images'))
+    .pipe(gulp.dest('src/main/resources/static/dist/images'))
     .pipe($.size({title: 'images'}));
 });
 
@@ -68,14 +68,14 @@ gulp.task('copy', function () {
     'node_modules/apache-server-configs/dist/.htaccess'
   ], {
     dot: true
-  }).pipe(gulp.dest('static/dist'))
+  }).pipe(gulp.dest('src/main/resources/static/dist'))
     .pipe($.size({title: 'copy'}));
 });
 
 // Copy web fonts to dist
 gulp.task('fonts', function () {
   return gulp.src(['app/fonts/**'])
-    .pipe(gulp.dest('static/dist/fonts'))
+    .pipe(gulp.dest('src/main/resources/static/dist/fonts'))
     .pipe($.size({title: 'fonts'}));
 });
 
@@ -98,7 +98,7 @@ gulp.task('styles', function () {
     .pipe(gulp.dest('.tmp/styles'))
     // Concatenate and minify styles
     .pipe($.if('*.css', $.csso()))
-    .pipe(gulp.dest('static/dist/styles'))
+    .pipe(gulp.dest('src/main/resources/static/dist/styles'))
     .pipe($.size({title: 'styles'}));
 });
 
@@ -134,12 +134,12 @@ gulp.task('html', function () {
     // Minify any HTML
     .pipe($.if('*.html', $.minifyHtml()))
     // Output files
-    .pipe(gulp.dest('static/dist'))
+    .pipe(gulp.dest('src/main/resources/static/dist'))
     .pipe($.size({title: 'html'}));
 });
 
 // Clean output directory
-gulp.task('clean', del.bind(null, ['.tmp', 'static/dist/*', '!static/dist/.git'], {dot: true}));
+gulp.task('clean', del.bind(null, ['.tmp', 'src/main/resources/static/dist/*', '!src/main/resources/static/dist/.git'], {dot: true}));
 
 // Watch files for changes & reload
 gulp.task('serve', ['styles'], function () {
@@ -169,7 +169,7 @@ gulp.task('serve:dist', ['default'], function () {
     // Note: this uses an unsigned certificate which on first access
     //       will present a certificate warning in the browser.
     // https: true,
-    server: 'static/dist'
+    server: 'src/main/resources/static/dist'
   });
 });
 
