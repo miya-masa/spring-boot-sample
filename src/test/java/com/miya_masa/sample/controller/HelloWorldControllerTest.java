@@ -22,7 +22,7 @@ public class HelloWorldControllerTest {
 	public void test() {
 
 		String actual = helloWorldController.index();
-		assertThat(actual, is(equalTo("Hello World!!!")));
+		assertThat(actual, is(equalTo("Hello World!!!安心してください。履いてます！")));
 	}
 
 }
