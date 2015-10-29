@@ -7,9 +7,9 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("helloWorld")
 public class HelloWorldController {
 
-	@RequestMapping
-	public String index() {
-		return "Hello World!!!安心してください。履いてます！";
-	}
+	// @RequestMapping
+	// public String index() {
+	// return "Hello World!!!";
+	// }
 
 }
